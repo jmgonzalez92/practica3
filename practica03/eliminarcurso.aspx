@@ -10,6 +10,7 @@
     <form id="form1" runat="server">
     <div>
      <asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-control"></asp:DropDownList>
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Borrar" />
     </div>
     </form>
 </body>

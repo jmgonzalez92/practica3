@@ -14,14 +14,25 @@ namespace practica03
         {
             if (!this.IsPostBack)
             {
-                PersonManager proxy = new PersonManager();
+                CourseManager proxy = new CourseManager();
 
                 this.DropDownList2.DataSource = proxy.GetAll();
-                this.DropDownList2.DataTextField = "LastName";
-                this.DropDownList2.DataValueField = "id";
+                this.DropDownList2.DataTextField = "Title";
+                this.DropDownList2.DataValueField = "CourseID";
                 this.DropDownList2.DataBind();
-
             }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(this.DropDownList2.SelectedValue);
+
+            CourseManager proxy = new CourseManager();
+
+            proxy.Remove(id);
+
+           
+
         }
     }
 }

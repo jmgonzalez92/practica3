@@ -95,7 +95,7 @@ namespace practica03.Models
                 using (SchoolEntities db = new SchoolEntities())
                 {
                     int id = ID;
-                    var sql = @"DELETE FROM [Courses] WHERE CourseID  = {0}";
+                    var sql = @"DELETE FROM [Course] WHERE CourseID  = {0}";
                     db.Database.ExecuteSqlCommand(sql, id);
                 }
                 return true;
