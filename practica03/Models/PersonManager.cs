@@ -17,9 +17,11 @@ namespace practica03.Models
            public DateTime HireDate {get; set;}
            public DateTime EnrollmentDate {get; set;}
 
+           public bool fechah;
 
-
+           public bool fechae;
         }
+
         public List<PersonaData> GetAll()
            {
                List<PersonaData> datos = new List<PersonaData>();
@@ -28,22 +30,32 @@ namespace practica03.Models
                    using (SchoolEntities db = new SchoolEntities())
                    {
                        var consulta = from personas in db.People
-                                      select new PersonaData()
-                                      {
-                                          id = personas.PersonID,
-                                          LastName = personas.LastName,
-                                          FirstName = personas.FirstName,
-                                          HireDate = Convert.ToDateTime(personas.HireDate),
-                                          EnrollmentDate = Convert.ToDateTime(personas.EnrollmentDate),
-                                      };
-                       datos = consulta.ToList();
+                                      select personas;
+                       foreach (Person p in consulta)
+                       {
+                           PersonaData pData = new PersonaData()
+                           {
+                               id = p.PersonID,
+                               LastName = p.LastName,
+                               FirstName = p.FirstName,
+                           };
+                           if (p.HireDate.HasValue)
+                           {
+                               pData.HireDate = p.HireDate.Value;
+                           }
+                           if (p.EnrollmentDate.HasValue)
+                           {
+                               pData.EnrollmentDate = p.EnrollmentDate.Value;
+                           }
+                           datos.Add(pData);
+                       }
                    }
-                   return datos;
                }
                catch (Exception ex)
                {
                    throw new Exception("ERROR EN ACCESO A DATOS," + ex.Message);
                }
+            return datos;
            }
         public List<PersonaData> Get(int ID)
            {
