@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
+     <asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-control"></asp:DropDownList>
     </div>
     </form>
 </body>
