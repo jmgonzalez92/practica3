@@ -114,7 +114,7 @@ namespace practica03.Models
                {
                    using (SchoolEntities db = new SchoolEntities())
                    {
-                       string id = ID;
+                       int id = ID;
                        var sql = @"DELETE FROM [Person] WHERE PersonID = {0}";
                        db.Database.ExecuteSqlCommand(sql, id);
                    }
