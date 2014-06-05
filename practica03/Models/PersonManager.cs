@@ -33,7 +33,8 @@ namespace practica03.Models
                                           id = personas.PersonID,
                                           LastName = personas.LastName,
                                           FirstName = personas.FirstName,
-
+                                          HireDate = Convert.ToDateTime(personas.HireDate),
+                                          EnrollmentDate = Convert.ToDateTime(personas.EnrollmentDate),
                                       };
                        datos = consulta.ToList();
                    }
