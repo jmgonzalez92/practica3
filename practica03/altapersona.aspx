@@ -18,7 +18,7 @@
         <div class="row" style="padding-left: 10px;">            
             <div class="col-md-2">
                 <div class="form-group">
-                    <asp:Label CssClass="control-label" Text="Numero Registro" ID="lblDNI" runat="server" AssociatedControlID="txtID"></asp:Label>
+                    <asp:Label CssClass="control-label" Text="Numero Registro" ID="lblID" runat="server" AssociatedControlID="txtID"></asp:Label>
                     <asp:TextBox CssClass="form-control" ID="txtID" runat="server"></asp:TextBox>
                 </div>
             </div>
