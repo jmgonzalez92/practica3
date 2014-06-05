@@ -78,9 +78,6 @@
                         <asp:BoundField DataField="EnrollmentDate" HeaderText="Fecha de Matriculacion" >
                         <ItemStyle Width="150px" />
                         </asp:BoundField>
-                        <asp:ButtonField Text="Eliminar">
-                        <ItemStyle Width="150px" />
-                        </asp:ButtonField>
                     </Columns>
                     <HeaderStyle BackColor="#000066" ForeColor="White" />
                 </asp:GridView>
