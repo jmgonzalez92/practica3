@@ -9,21 +9,26 @@ namespace practica03.Models
 {
     public class PersonManager
        {
-           public int id {get; set;}
+        public class PersonaData
+        {
+            public int id {get; set;}
            public string LastName {get; set;}
            public string FirstName {get; set;}
            public DateTime HireDate {get; set;}
            public DateTime EnrollmentDate {get; set;}
 
-           public List<PersonManager> GetAll()
+
+
+        }
+        public List<PersonaData> GetAll()
            {
-               List<PersonManager> datos = new List<PersonManager>();
+               List<PersonaData> datos = new List<PersonaData>();
                try
                {
                    using (SchoolEntities db = new SchoolEntities())
                    {
                        var consulta = from personas in db.People
-                                      select new PersonManager()
+                                      select new PersonaData()
                                       {
                                           id = personas.PersonID,
                                           LastName = personas.LastName,
@@ -39,16 +44,16 @@ namespace practica03.Models
                    throw new Exception("ERROR EN ACCESO A DATOS," + ex.Message);
                }
            }
-           public List<PersonManager> Get(int ID)
+        public List<PersonaData> Get(int ID)
            {
-               List<PersonManager> datos = new List<PersonManager>();
+               List<PersonaData> datos = new List<PersonaData>();
                try
                {
                    using (SchoolEntities db = new SchoolEntities())
                    {
                        var consulta = from personas in db.People
                                       where personas.PersonID.Equals(ID)
-                                      select new PersonManager()
+                                      select new PersonaData()
                                       {
                                           id = personas.PersonID,
                                           LastName = personas.LastName,
@@ -65,7 +70,7 @@ namespace practica03.Models
                }
            }
 
-           public bool Add(PersonManager persona)
+            public bool Add(PersonaData persona)
            {
                try
                {
