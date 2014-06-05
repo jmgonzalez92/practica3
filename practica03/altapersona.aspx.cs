@@ -1,4 +1,5 @@
-﻿using System;
+﻿using practica03.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,27 @@ namespace practica03
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!this.IsPostBack)
+            {
+                PersonManager proxy = new PersonManager();
 
+                
+                this.GridView1.DataSource = proxy.GetAll();
+                this.GridView1.DataBind();
+            }
         }
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            PersonManager proxy = new PersonManager();
+            GridView1.PageIndex = e.NewPageIndex;
+            this.GridView1.DataSource = proxy.GetAll();
+            this.GridView1.DataBind();         
+            
+        }
+
+        
+
+        
     }
 }
