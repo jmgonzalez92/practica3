@@ -83,7 +83,7 @@ namespace practica03.Models
                }
            }
 
-            public bool Add(PersonaData persona)
+           public bool Add(PersonaData persona)
            {
                try
                {
@@ -108,14 +108,14 @@ namespace practica03.Models
                }
            }
 
-           public bool Remove(string ID)
+           public bool Remove(int ID)
            {
                try
                {
                    using (SchoolEntities db = new SchoolEntities())
                    {
                        string id = ID;
-                       var sql = @"DELETE FROM [Empresas] WHERE CIF = {0}";
+                       var sql = @"DELETE FROM [Person] WHERE PersonID = {0}";
                        db.Database.ExecuteSqlCommand(sql, id);
                    }
                    return true;
