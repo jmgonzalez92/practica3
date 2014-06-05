@@ -72,7 +72,7 @@ namespace practica03.Models
                 {
                     Course nuevo = new Course();
 
-                    nuevo.CourseID = curso.id;
+                    nuevo.CourseID = curso.CourseID;
                     nuevo.Title = curso.Title;
                     nuevo.Credits = curso.Credits;
                     nuevo.DepartmentID = curso.DepartmentID;
@@ -94,7 +94,7 @@ namespace practica03.Models
             {
                 using (SchoolEntities db = new SchoolEntities())
                 {
-                    string id = ID;
+                    int id = ID;
                     var sql = @"DELETE FROM [Courses] WHERE CourseID  = {0}";
                     db.Database.ExecuteSqlCommand(sql, id);
                 }
