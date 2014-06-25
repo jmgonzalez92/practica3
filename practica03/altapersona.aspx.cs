@@ -31,6 +31,16 @@ namespace practica03
             
         }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (this.IsPostBack)
+            {
+
+                Person p = new Person();
+                p.LastName = this.txt
+            }
+        }
+
         
 
         

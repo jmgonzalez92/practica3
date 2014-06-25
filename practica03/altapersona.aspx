@@ -15,13 +15,7 @@
     
     <form id="form1" runat="server" role="form">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <div class="row" style="padding-left: 10px;">            
-            <div class="col-md-2">
-                <div class="form-group">
-                    <asp:Label CssClass="control-label" Text="Numero Registro" ID="lblID" runat="server" AssociatedControlID="txtID"></asp:Label>
-                    <asp:TextBox CssClass="form-control" ID="txtID" runat="server"></asp:TextBox>
-                </div>
-            </div>
+        <div class="row" style="padding-left: 10px;">  
             <div class="col-md-2">
                 <div class="form-group">
                     <asp:Label CssClass="control-label" Text="Nombre" ID="lblNombre" runat="server" AssociatedControlID="txtNombre"></asp:Label>
@@ -50,7 +44,7 @@
                 <div class="form-group">
                     <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
                         <ContentTemplate>
-                            <asp:Button CssClass="btn btn-primary" ID="Button1" runat="server" Text="Añadir"   />
+                            <asp:Button CssClass="btn btn-primary" ID="Button1" runat="server" Text="Añadir" OnClick="Button1_Click"   />
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </div>
